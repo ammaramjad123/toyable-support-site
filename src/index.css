@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-brown: #4B2A1F;
+  --color-brand-orange: #E46A1B;
+  --color-brand-yellow: #F6A623;
+  --color-brand-red: #E53935;
+  --color-brand-beige: #F2EFEA;
+}
+
+.nav-link {
+  @apply text-brand-brown font-medium relative transition duration-300;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-brand-orange transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.mobile-link {
+  @apply text-brand-brown text-lg font-medium transition duration-300 hover:text-brand-orange;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes jiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.jiggle-hover:hover {
+  animation: jiggle 0.35s ease-in-out;
+}
+
+.sponsor-track {
+  display: flex;
+  width: 200%;
+  animation: sponsorScroll 10s linear infinite; /* Faster */
+}
+
+.sponsor-item {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.sponsor-item img {
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Desktop: 2 visible */
+@media (min-width: 1024px) {
+  .sponsor-item {
+    flex: 0 0 25%;
+    padding: 0 6rem;
+  }
+
+  .sponsor-item img {
+    height: 150px;
+  }
+}
+
+/* Mobile: 1 visible centered */
+@media (max-width: 768px) {
+  .sponsor-item {
+    flex: 0 0 50%;
+    padding: 0;
+  }
+
+  .sponsor-item img {
+    height: 100px;
+  }
+}
+
+@keyframes sponsorScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
