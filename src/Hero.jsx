@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="absolute -z-10 w-72 h-72 sm:w-96 sm:h-96 bg-brand-orange/20 rounded-full blur-3xl"></div>
 
             <img
-              src="/app-mockup.png"
+              src="/Toyable.png"
               alt="Toyable App Preview"
               className="w-56 sm:w-64 md:w-72 lg:w-96 drop-shadow-2xl"
             />

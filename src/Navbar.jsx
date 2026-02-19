@@ -57,9 +57,9 @@ const Navbar = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <img
-              src="/logo.png"
+              src="/NavLogo.png"
               alt="Toyable Logo"
-              className="h-23 w-auto"
+              className="h-38 w-auto"
             />
           </a>
 
