@@ -15,16 +15,14 @@ const About = () => {
             </p>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-brown leading-tight">
-              Built for Collectors.
+              The Ultimate
               <span className="block text-brand-orange">
-                Not for Marketplaces.
+              Collector's Companion
               </span>
             </h2>
 
             <p className="mt-8 text-lg sm:text-xl text-brand-brown/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Toyable is a purpose-built platform designed for serious vintage
-              toy collectors who want structure, clarity, and insight — not
-              buying and selling.
+              Toyable brings structure, clarity, and insight to vintage toy collecting — built for serious collectors and dealers, but great for casual hobbyists too.
             </p>
 
           </div>
