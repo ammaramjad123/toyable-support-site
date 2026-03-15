@@ -22,11 +22,7 @@ const faqs = [
     answer:
       "Absolutely! Use this contact form to suggest new toy lines or items you'd like to see added to our database."
   },
-  {
-    question: "When will the Privacy Policy be available?",
-    answer:
-      "A full Privacy Policy is currently being finalised and will be published shortly. In the meantime, we remain committed to protecting user data and respecting privacy settings."
-  }
+  
 ];
 
 const FAQ = () => {

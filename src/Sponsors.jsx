@@ -14,8 +14,7 @@ const Sponsors = () => {
         </h2>
 
         <p className="mt-6 text-lg sm:text-xl text-brand-brown/80 max-w-3xl mx-auto">
-          Toyable is sponsored by Leicester Vintage & Old Toy Shop and The Toy Amigos —
-          long-standing pillars of the vintage toy community.
+          Toyable is sponsored by Leicester Vintage & Old Toy Shop and The Toy Amigos
         </p>
 
       </div>

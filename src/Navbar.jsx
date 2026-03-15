@@ -71,10 +71,11 @@ const Navbar = () => {
             <NavLink href="#contact">Contact Us</NavLink>
 
             <a
-              href="#download"
+              href="https://toyable.app/"
+              target="_blank"
               className="bg-brand-orange hover:bg-brand-red text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl"
             >
-              Download App
+              Visit Website
             </a>
           </nav>
 
@@ -115,11 +116,12 @@ const Navbar = () => {
           </MobileLink>
 
           <a
-            href="#download"
+            href="https://toyable.app/"
+            target="_blank"
             onClick={() => setIsOpen(false)}
             className="bg-brand-orange hover:bg-brand-red text-white text-center py-3 rounded-full font-semibold transition-all duration-300"
           >
-            Download App
+            Visit Website
           </a>
         </div>
       </div>

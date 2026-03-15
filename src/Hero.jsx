@@ -50,17 +50,40 @@ const Hero = () => {
                 />
               </a>
 
-              {/* Google Play */}
-              <a
-                href="#"
-                className="transition-transform duration-200 hover:scale-105 scale-108 sm:scale-100"
-              >
-                <img
-                  src="/google-play-badge.svg"
-                  alt="Get it on Google Play"
-                  className="h-15 sm:h-18 w-auto"
-                />
-              </a>
+             {/* Google Play */}
+<a
+  href="#"
+  className="transition-transform duration-200 hover:scale-105 scale-108 sm:scale-100"
+>
+  <img
+    src="/google-play-badge.svg"
+    alt="Get it on Google Play"
+    className="h-15 sm:h-18 w-auto"
+  />
+</a>
+
+<a
+  href="https://toyable.app/"
+  target="_blank"
+  className="sm:hidden mt-4 inline-flex items-center justify-center gap-2
+  px-8 py-2.5 rounded-full
+  border-2 border-brand-orange
+  text-brand-orange font-semibold text-base
+  hover:bg-brand-orange hover:text-white
+  transition-all duration-200"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-4 h-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H9M17 7V15" />
+  </svg>
+  Visit Website
+</a>
             </div>
 
             <p className="mt-6 text-sm text-brand-brown/60">

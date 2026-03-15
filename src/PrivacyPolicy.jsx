@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
           </p>
 
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-brown leading-tight">
-            Toyable Image Policy
+            Image & Privacy Policy
           </h1>
 
           <p className="mt-8 text-base sm:text-lg text-brand-brown/80 leading-relaxed">
@@ -34,10 +34,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-brand-brown/80 text-sm sm:text-base leading-relaxed">
-              Users retain ownership of any images they upload. By sharing
-              images with Toyable, you grant us permission to display them
-              within the Database, Toyable 200, and related features as part
-              of our community-driven archive.
+              Users retain ownership of the images they upload to Toyable. By sharing images on the platform, you allow Toyable to display them within the database and related features. Contributors can choose whether their username appears as an image credit, linking back to their Toyable profile.
             </p>
           </div>
 
@@ -51,9 +48,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-brand-brown/80 text-sm sm:text-base leading-relaxed">
-              We do not knowingly use copyrighted or watermarked images
-              without consent. Contributors can receive image credit by
-              enabling the “Show Image Credits” option in Privacy Settings.
+              Toyable respects user privacy and does not sell personal data or share it with advertisers. Information collected through accounts, collections, wishlists, and uploaded content is used only to operate and improve the platform. Users can control visibility settings, privacy options, and how their information appears to others.
             </p>
           </div>
 
@@ -67,9 +62,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-brand-brown/80 text-sm sm:text-base leading-relaxed">
-              If you believe an image has been used without permission,
-              please submit an Image Removal Request. Valid requests are
-              reviewed promptly and handled as quickly as possible.
+              Users maintain control over their data and content on Toyable. If you believe content has been used without permission or wish to remove personal data or images, you may submit a request through the Contact Us form. Valid requests are reviewed and handled as quickly as possible.
             </p>
           </div>
 

@@ -35,8 +35,7 @@ const About = () => {
                 Structured Database
               </h3>
               <p className="text-brand-brown/70 leading-relaxed">
-                Thousands of detailed entries from the 1960s to early 2000s,
-                complete with accessory lists, images, and pricing references.
+                Thousands of detailed entries from the 1960s to early 2000s, with accessory lists, images, and average sold price data from eBay where available.
               </p>
             </div>
 

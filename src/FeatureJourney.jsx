@@ -145,8 +145,12 @@ const FeatureJourney = () => {
                 "Star Wars",
                 "MOTU",
                 "Ghostbusters",
-                "Wrestlers",
-                "My Little Pony"
+                "Wrestling",
+                "My Little Pony",
+                "Transformers (G1)",
+                "Thundercats",
+                "Action Force",
+                "Mighty Max"
               ].map((line, i) => (
                 <span
                   key={i}
@@ -219,9 +223,11 @@ const FeatureJourney = () => {
             <ul className="mt-10 space-y-5 max-w-md mx-auto lg:mx-0">
               {[
                 "Mark as Owned or Wish List",
-                "Upload personal instance images",
+                "Upload images of your toys",
                 "Display Cabinet feature",
-                "Automatic public profile sync"
+                "Automatic public profile sync",
+                "Strict privacy controls",
+                "Accessories tracker checklists"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-left text-brand-brown/80">
                   <CheckCircle className="text-brand-orange mt-1 flex-shrink-0" size={20} />
@@ -263,9 +269,7 @@ const FeatureJourney = () => {
             </h2>
 
             <p className="mt-8 text-lg sm:text-xl text-brand-brown/80 max-w-xl mx-auto lg:mx-0">
-              Track purchase history privately, monitor valuations through live
-              eBay references, analyse your collection performance,
-              and export everything to CSV.
+              Track purchase & sales history privately, monitor valuations through regularly updated eBay average sold price data, analyse your collection performance, and export everything to CSV.
             </p>
 
             <ul className="mt-10 space-y-5 max-w-md mx-auto lg:mx-0">
@@ -314,9 +318,7 @@ const FeatureJourney = () => {
       </h2>
 
       <p className="mt-8 text-lg sm:text-xl text-brand-brown/80 max-w-xl mx-auto lg:mx-0">
-        Toyable is community maintained. Collectors contribute images,
-        expand the archive, earn recognition,
-        and participate in the Toyable 200.
+        Toyable is community maintained. Collectors contribute images, expand the archive, earn recognition, compete in the XP leaderboard and champion their favourite lines in the Toyable 200 Shelf Wars.
       </p>
 
       <ul className="mt-10 space-y-5 max-w-md mx-auto lg:mx-0">
