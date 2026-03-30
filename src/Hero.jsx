@@ -90,7 +90,7 @@ const Hero = () => {
           d="M7 17L17 7M17 7H9M17 7V15"
         />
       </svg>
-      Visit Website
+      Toyable Web Version
     </a>
   </div>
 
@@ -101,7 +101,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="sm:hidden mt-4 inline-flex items-center justify-center gap-2
-              px-12 py-2.5 rounded-full
+              px-5 py-2.5 rounded-full
               border-2 border-brand-orange
               text-brand-orange font-semibold text-base
               hover:bg-brand-orange hover:text-white
@@ -117,7 +117,7 @@ const Hero = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H9M17 7V15" />
               </svg>
-              Visit Website
+              Toyable Web Version
             </a>
 
             <p className="mt-6 text-sm text-brand-brown/60">

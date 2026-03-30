@@ -11,9 +11,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY.current && window.scrollY > 100) {
-        setShowNav(false); // scrolling down
+        setShowNav(false);
       } else {
-        setShowNav(true); // scrolling up
+        setShowNav(true);
       }
       lastScrollY.current = window.scrollY;
     };
@@ -68,14 +68,14 @@ const Navbar = () => {
             <NavLink href="#features">Features</NavLink>
             <NavLink href="#sponsors">Sponsors</NavLink>
             <NavLink href="#faq">FAQ</NavLink>
-            <NavLink href="#contact">Contact Us</NavLink>
+            <NavLink href="#privacy-policy">Privacy Policy</NavLink>
 
+            {/* Contact Button */}
             <a
-              href="https://toyable.app/"
-              target="_blank"
+              href="#contact"
               className="bg-brand-orange hover:bg-brand-red text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl"
             >
-              Visit Website
+              Contact Us
             </a>
           </nav>
 
@@ -111,18 +111,19 @@ const Navbar = () => {
             FAQ
           </MobileLink>
 
-          <MobileLink href="#contact" onClick={() => setIsOpen(false)}>
-            Contact Us
+          <MobileLink href="#privacy-policy" onClick={() => setIsOpen(false)}>
+            Privacy Policy
           </MobileLink>
 
+          {/* Contact Button */}
           <a
-            href="https://toyable.app/"
-            target="_blank"
+            href="#contact"
             onClick={() => setIsOpen(false)}
             className="bg-brand-orange hover:bg-brand-red text-white text-center py-3 rounded-full font-semibold transition-all duration-300"
           >
-            Visit Website
+            Contact Us
           </a>
+
         </div>
       </div>
     </header>
