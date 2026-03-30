@@ -66,6 +66,32 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
+          {/* Additional Policy Links */}
+          <div>
+            <p className="text-brand-brown/80 text-sm sm:text-base leading-relaxed">
+              You can read the full{" "}
+              <a
+                href="https://toyable.app/image-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-orange underline hover:opacity-80"
+              >
+                Image
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://toyable.app/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-orange underline hover:opacity-80"
+              >
+                Privacy
+              </a>{" "}
+              policies by selecting these links.
+            </p>
+          </div>
+
+
         </div>
 
       </div>

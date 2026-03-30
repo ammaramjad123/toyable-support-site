@@ -5,7 +5,7 @@ const faqs = [
   {
   question: "How do I add items to my collection?",
   answer:
-    "Navigate to the Database, find your item, and click the \"Add to Collection\" button. You'll need to be logged in."
+    "Navigate to the Database, find your item, and click the \"Own\" button. You'll need to be logged in."
 },
   {
     question: "Can I make my collection private?",
@@ -13,14 +13,26 @@ const faqs = [
       "Yes! In your Profile settings, you can adjust your privacy settings to control who can see your collection."
   },
   {
-    question: "How do I upgrade my subscription?",
-    answer:
-      "Visit your Profile page and look for the subscription section to view available plans and upgrade options."
-  },
+  question: "How do I upgrade my subscription?",
+  answer: (
+    <>
+      Navigate to Account - Subscription or view the{" "}
+      <a
+        href="https://toyable.app/subscription-plans"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-brand-orange underline hover:opacity-80"
+      >
+        Subscription Plans
+      </a>{" "}
+      page for more information about available plans and upgrade options.
+    </>
+  )
+},
   {
     question: "Can I suggest new toy lines?",
     answer:
-      "Absolutely! Use this contact form to suggest new toy lines or items you'd like to see added to our database."
+      "Absolutely! Use this contact form or reach out to us on social media to suggest new toy lines or items you'd like to see added to the Toyable 200. Want to add a new item to the database? You can do this yourself using the Database Update Form."
   },
   
 ];
