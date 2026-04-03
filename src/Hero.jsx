@@ -40,7 +40,9 @@ const Hero = () => {
   <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
     
     <a
-      href="#"
+      href="https://apps.apple.com/gb/app/toyable/id6760224339"
+      target="_blank"
+rel="noopener noreferrer"
       className="transition-transform duration-200 hover:scale-105 scale-108 sm:scale-100"
     >
       <img
