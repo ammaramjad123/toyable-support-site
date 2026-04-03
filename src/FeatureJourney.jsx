@@ -263,7 +263,7 @@ const FeatureJourney = () => {
 </section>
 
 
-    {/* ================== SECTION 3 – MARKET INTELLIGENCE ================== */}
+   {/* ================== SECTION 3 – MARKET INTELLIGENCE ================== */}
 <section className="bg-white py-24 sm:py-28">
   <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
 
@@ -300,7 +300,7 @@ const FeatureJourney = () => {
     </div>
 
     {/* VISUAL - SINGLE LARGE IMAGE */}
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center">
       <div className="bg-brand-beige rounded-3xl shadow-xl w-full overflow-hidden">
         <div className="overflow-hidden">
           <img 
@@ -311,11 +311,14 @@ const FeatureJourney = () => {
           />
         </div>
       </div>
+      {/* Price disclaimer line */}
+      <p className="mt-4 text-sm text-brand-brown/60 font-bold text-center">
+        Prices also available in USD
+      </p>
     </div>
 
   </div>
 </section>
-
 
    {/* ================== SECTION 4 – COMMUNITY POWERED ================== */}
 <section className="bg-brand-beige py-24 sm:py-28">
