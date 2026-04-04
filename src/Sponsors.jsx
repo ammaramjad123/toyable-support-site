@@ -14,47 +14,27 @@ const Sponsors = () => {
         </h2>
 
         <p className="mt-6 text-lg sm:text-xl text-brand-brown/80 max-w-3xl mx-auto">
-          Toyable is sponsored by Leicester Vintage & Old Toy Shop and The Toy Amigos
+          Toyable is sponsored by Leicester Vintage & Old Toy Shop
         </p>
 
       </div>
 
-      {/* SLIDER */}
-      <div className="mt-16 relative overflow-hidden">
-
-        <div className="sponsor-track">
-
-          {/* Leicester */}
-          <div className="sponsor-item">
-            <img
-              src="/leicester-logo.jpg"
-              alt="Leicester Vintage & Old Toy Shop"
-            />
-          </div>
-
-          {/* Toy Amigos */}
-          <div className="sponsor-item">
-            <img
-              src="/toy-amigos-logo.jpg"
-              alt="The Toy Amigos"
-            />
-          </div>
-
-          {/* DUPLICATED FOR LOOP */}
-          <div className="sponsor-item">
-            <img
-              src="/leicester-logo.jpg"
-              alt="Leicester Vintage & Old Toy Shop"
-            />
-          </div>
-
-          <div className="sponsor-item">
-            <img
-              src="/toy-amigos-logo.jpg"
-              alt="The Toy Amigos"
-            />
-          </div>
-
+      {/* SINGLE LOGO - CENTERED */}
+      <div className="mt-16">
+        <div className="flex justify-center">
+          <img
+            src="/leicester-logo.jpg"
+            alt="Leicester Vintage & Old Toy Shop"
+            className="
+              w-40        /* mobile */
+              sm:w-46     /* small screens */
+              md:w-50     /* tablets */
+              lg:w-54     /* desktops */
+              xl:w-[220px] 
+              h-auto
+              object-contain
+            "
+          />
         </div>
       </div>
     </section>

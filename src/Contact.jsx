@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Mail, Clock, Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,6 +13,7 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -21,7 +24,34 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    // EmailJS credentials
+    const SERVICE_ID = "service_n3mqz4k";
+    const TEMPLATE_ID = "template_9pxpxdo";
+    const PUBLIC_KEY = "lzo_0DdvL6YPWdnOI";
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then(
+        () => {
+          setSubmitted(true);
+          setLoading(false);
+          // Reset form fields in state and DOM
+          form.current.reset();
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
+          });
+        },
+        (error) => {
+          console.error("EmailJS Error:", error.text);
+          setLoading(false);
+          alert("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -40,7 +70,7 @@ const Contact = () => {
 
           <p className="mt-6 text-base sm:text-lg text-brand-brown/70 leading-relaxed">
             Whether you have a question about the database, Toyable 200,
-            subscriptions, or community contributions — we’re here to help.
+            subscriptions, or community contributions — we're here to help.
           </p>
         </div>
 
@@ -93,17 +123,16 @@ const Contact = () => {
                 </a>
 
                 <a
-  href="https://x.com/toyable_app"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="p-4 rounded-full border border-brand-brown/10 hover:border-brand-orange transition duration-300"
->
-  <FaXTwitter
-    className="text-brand-brown hover:text-brand-orange transition duration-300"
-    size={22}
-  />
-</a>
-
+                  href="https://x.com/toyable_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full border border-brand-brown/10 hover:border-brand-orange transition duration-300"
+                >
+                  <FaXTwitter
+                    className="text-brand-brown hover:text-brand-orange transition duration-300"
+                    size={22}
+                  />
+                </a>
               </div>
             </div>
 
@@ -115,14 +144,29 @@ const Contact = () => {
             {submitted ? (
               <div className="text-center py-16">
                 <h3 className="text-2xl font-semibold text-brand-brown">
-                  Message Sent
+                  Message Sent ✓
                 </h3>
                 <p className="mt-4 text-brand-brown/70">
-                  Thank you for reaching out. We’ll respond within 24 hours.
+                  Thank you for reaching out. We'll respond within 24 hours.
                 </p>
+                {/* Optional: Add a button to send another message */}
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({
+                      name: "",
+                      email: "",
+                      subject: "",
+                      message: ""
+                    });
+                  }}
+                  className="mt-8 text-brand-orange hover:text-brand-red transition font-medium"
+                >
+                  ← Send another message
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-8">
 
                 {/* Name */}
                 <div className="relative">
@@ -187,9 +231,10 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-brand-orange text-white py-4 rounded-xl font-semibold text-lg hover:bg-brand-red transition duration-300 shadow-md cursor-pointer"
+                  disabled={loading}
+                  className="w-full bg-brand-orange text-white py-4 rounded-xl font-semibold text-lg hover:bg-brand-red transition duration-300 shadow-md cursor-pointer disabled:opacity-70"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
 
               </form>
