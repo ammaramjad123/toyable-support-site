@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const menuRef = useRef(null);
   const lastScrollY = useRef(0);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Hide on scroll down / show on scroll up
   useEffect(() => {
@@ -45,6 +48,30 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Already on homepage, just scroll
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    
+    setIsOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 w-full z-50 backdrop-blur-xl bg-brand-beige/85 border-b border-brand-brown/10 transition-transform duration-300 ${
@@ -65,14 +92,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10">
-            <NavLink href="#features">Features</NavLink>
-            <NavLink href="#sponsors">Sponsors</NavLink>
-            <NavLink href="#faq">FAQ</NavLink>
-            <NavLink href="#privacy-policy">Privacy Policy</NavLink>
+            <NavLink href="#features" onClick={(e) => handleNavClick(e, "#features")}>Features</NavLink>
+            <NavLink href="#sponsors" onClick={(e) => handleNavClick(e, "#sponsors")}>Sponsors</NavLink>
+            <NavLink href="#faq" onClick={(e) => handleNavClick(e, "#faq")}>FAQ</NavLink>
+            <NavLink href="#privacy-policy" onClick={(e) => handleNavClick(e, "#privacy-policy")}>Privacy Policy</NavLink>
+            <NavLink href="/download">Download</NavLink>
 
             {/* Contact Button */}
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="bg-brand-orange hover:bg-brand-red text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl"
             >
               Contact Us
@@ -99,26 +128,33 @@ const Navbar = () => {
       >
         <div className="px-6 pb-6 pt-4 bg-brand-beige border-t border-brand-brown/10 flex flex-col gap-6">
 
-          <MobileLink href="#features" onClick={() => setIsOpen(false)}>
+          <MobileLink href="#features" onClick={(e) => handleNavClick(e, "#features")}>
             Features
           </MobileLink>
 
-          <MobileLink href="#sponsors" onClick={() => setIsOpen(false)}>
+          <MobileLink href="#sponsors" onClick={(e) => handleNavClick(e, "#sponsors")}>
             Sponsors
           </MobileLink>
 
-          <MobileLink href="#faq" onClick={() => setIsOpen(false)}>
+          <MobileLink href="#faq" onClick={(e) => handleNavClick(e, "#faq")}>
             FAQ
           </MobileLink>
 
-          <MobileLink href="#privacy-policy" onClick={() => setIsOpen(false)}>
+          <MobileLink href="#privacy-policy" onClick={(e) => handleNavClick(e, "#privacy-policy")}>
             Privacy Policy
+          </MobileLink>
+
+          <MobileLink href="/download" onClick={() => setIsOpen(false)}>
+            Download
           </MobileLink>
 
           {/* Contact Button */}
           <a
             href="#contact"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, "#contact");
+              setIsOpen(false);
+            }}
             className="bg-brand-orange hover:bg-brand-red text-white text-center py-3 rounded-full font-semibold transition-all duration-300"
           >
             Contact Us
@@ -130,10 +166,11 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ href, children }) => {
+const NavLink = ({ href, children, onClick }) => {
   return (
     <a
       href={href}
+      onClick={onClick}
       className="relative text-brand-brown font-medium transition duration-300 group"
     >
       {children}
