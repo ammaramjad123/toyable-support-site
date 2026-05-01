@@ -9,7 +9,7 @@ const Download = () => {
           Download <span className="text-brand-orange">Toyable</span>
         </h1>
         <p className="text-base sm:text-lg text-brand-brown/70 mt-4">
-          Get the app on your favorite platform
+          Get the app on your favourite platform
         </p>
       </div>
 
@@ -34,7 +34,7 @@ const Download = () => {
 
             {/* Google Play Button */}
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.toyable.app"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full max-w-md transition-transform duration-200 hover:scale-105"

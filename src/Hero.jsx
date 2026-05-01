@@ -53,7 +53,9 @@ rel="noopener noreferrer"
     </a>
 
     <a
-      href="#"
+      href="https://play.google.com/store/apps/details?id=com.toyable.app"
+      target="_blank"
+      rel="noopener noreferrer"
       className="transition-transform duration-200 hover:scale-105 scale-108 sm:scale-100"
     >
       <img
